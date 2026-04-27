@@ -59,10 +59,10 @@ const BreakingNews = () => {
         <div className='md:w-11/12 lg:w-10/12 mx-auto'>
             <div className='flex justify-between items-center gap-3 bg-base-300 p-4'>
             <button className='text-white bg-[#D72050] py-2 px-4 rounded shadow hover:bg-[#9f1036] transition'>Breaking</button>
-            <Marquee pauseOnHover speed={100}>
+            <Marquee pauseOnHover speed={50}>
                     {
                         breakingNews.map(news => (
-                            <span className='mx-6 font-medium text-gray-700 hover:text-black transition' key={news.id}>{news.title}</span>
+                            <span className='mx-6  text-gray-700 hover:text-black transition' key={news.id}>Breaking News : {news.title}</span>
                         ))
                     }
             </Marquee>
