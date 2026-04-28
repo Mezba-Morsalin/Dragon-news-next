@@ -10,16 +10,16 @@ const SingleNews =async ({params}) => {
 
     return (
         <div className="w-11/12 lg:w-10/12 mx-auto mt-20">
-      <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-8 lg:grid-cols-12 gap-6">
         
-        <div className="col-span-3">
+        <div className="col-span-12 md:col-span-2 lg:col-span-3">
           <div className='sticky top-10'>
             <h2 className="text-lg font-bold mb-5">All Category</h2>
           <Category categories={categories.news_category} active = {id}></Category>
           </div>
         </div>
 
-        <div className=" col-span-6">
+        <div className="col-span-12 md:col-span-4 lg:col-span-6">
           <h2 className='text-[#403F3F] text-lg font-semibold mb-3'>Dragon News Home</h2>
             <div className='flex flex-col gap-12'>
               {singleCategory.length > 0 ?
@@ -30,11 +30,9 @@ const SingleNews =async ({params}) => {
             </div>
         </div>
 
-        <div className=" col-span-3">
-          <div className='sticky top-10'>
+        <div className="col-span-12 md:col-span-2 lg:col-span-3">
             <RightSideBar></RightSideBar>
           </div>
-        </div>
 
       </div>
     </div>

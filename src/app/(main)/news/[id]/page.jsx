@@ -5,6 +5,14 @@ import Link from 'next/link';
 import React from 'react';
 import { FaArrowLeft } from 'react-icons/fa6';
 
+export async function generateMetadata({ params}) {
+  const {id} = await params;
+  const [news] = await getNewsCategories(id)
+  return {
+    title: news.title,
+    description: news.details,
+  }
+}
 const NewsDetailsPage = async ({params}) => {
     const {id} = await params;
     const news =  await getNewsCategories(id)
@@ -12,11 +20,12 @@ const NewsDetailsPage = async ({params}) => {
     return (
         <div className='w-11/12 lg:w-10/12 mx-auto mt-14'>
             <h2 className='text-[#403F3F] text-lg font-semibold mb-3'>Dragon News Home</h2>
-            <div className='grid lg:grid-cols-12 gap-10'>
-                    {
+            <div className='grid grid-cols-1 md:grid-cols-8 lg:grid-cols-12 gap-10'>
+                    <div className='md:col-span-8 lg:col-span-9'>
+                        {
                         news.map(n => {
                         return (
-                           <div className='col-span-9 space-y-4 border border-gray-200 p-8 rounded-xl' key={n._id}>
+                           <div className=' space-y-4 border border-gray-200 p-8 rounded-xl' key={n._id}>
                              <Image  src={n.image_url} width={1100} height={100} alt='thumbnail-image'></Image>
                         <h2 className='text-2xl font-bold'>{n.title}</h2>
                         <p className='leading-7 text-[#706F6F]'>{n.details}</p>
@@ -25,7 +34,8 @@ const NewsDetailsPage = async ({params}) => {
                     )
                     })
                 }
-                <div className='col-span-3'>
+                    </div>
+                <div className='md:col-span-8 lg:col-span-3'>
                     <RightSideBar></RightSideBar>
                 </div>
             </div>
