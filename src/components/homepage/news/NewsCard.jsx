@@ -24,7 +24,7 @@ const NewsCard = ({news}) => {
             </div>
             <h2 className='text-xl font-bold text-[#403F3F]'>{news.title}</h2>
             <Image className='' src={news.image_url} alt='thumbnail' height={200} width={800}></Image>
-            <p className='line-clamp-3 text-[#706F6F]'>{news.details}</p>
+            <p className='line-clamp-3 leading-7 text-[#706F6F]'>{news.details}</p>
             <Link className='btn' href={`/news/${news._id}`}><span>Read More...</span></Link>
             <div className='border-t border-gray-200 flex items-center justify-between pt-2'>
                 <div className='flex items-center gap-3'>
