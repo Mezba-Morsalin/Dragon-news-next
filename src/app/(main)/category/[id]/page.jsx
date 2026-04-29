@@ -9,7 +9,7 @@ const SingleNews =async ({params}) => {
     const singleCategory = await getSingleCategories(id);
 
     return (
-        <div className="w-11/12 lg:w-10/12 mx-auto mt-20">
+        <div className="w-11/12 lg:w-10/12 mx-auto mt-36">
       <div className="grid grid-cols-1 md:grid-cols-8 lg:grid-cols-12 gap-6">
         
         <div className="col-span-12 md:col-span-2 lg:col-span-3">

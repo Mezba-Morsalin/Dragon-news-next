@@ -18,7 +18,7 @@ const NewsDetailsPage = async ({params}) => {
     const news =  await getNewsCategories(id)
     console.log(news)
     return (
-        <div className='w-11/12 lg:w-10/12 mx-auto mt-14'>
+        <div className='w-11/12 lg:w-10/12 mx-auto'>
             <h2 className='text-[#403F3F] text-lg font-semibold mb-3'>Dragon News Home</h2>
             <div className='grid grid-cols-1 md:grid-cols-8 lg:grid-cols-12 gap-10'>
                     <div className='md:col-span-8 lg:col-span-9'>
