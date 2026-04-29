@@ -16,7 +16,19 @@ const RightSideBar = () => {
     provider: "google",
   });
   console.log(data)
-    }
+    };
+    const handleGithubLogin = async () => {
+    const data = await authClient.signIn.social({
+    provider: "github",
+  });
+  console.log(data)
+    };
+    const handleFacebookLogin = async () => {
+    const data = await authClient.signIn.social({
+    provider: "facebook",
+  });
+  console.log(data)
+    };
     return (
         <div>
             <h2 className="text-lg font-bold mb-3">Login With</h2>
@@ -25,7 +37,7 @@ const RightSideBar = () => {
                     <FaGoogle/>
                     Login With Google
                     </button>
-                <button className='btn'>
+                <button onClick={() => handleGithubLogin()} className='btn'>
                     <FaGithub/>
                     Login With Github
                     </button>
@@ -33,7 +45,7 @@ const RightSideBar = () => {
             <div className='mt-10'>
                 <h2 className='text-[#403F3F] text-lg font-semibold mb-3'>Find Us On</h2>
                 <div className='flex flex-col gap-3'>
-                    <button className='btn'><Image src={facebook} width={10} height={10} alt='facebook-png'></Image>Facebook</button>
+                    <button onClick={()=> handleFacebookLogin()} className='btn'><Image src={facebook} width={10} height={10} alt='facebook-png'></Image>Facebook</button>
                     <button className='btn'><Image src={twitter} width={20} height={20} alt='facebook-png'></Image>Twitter</button>
                     <button className='btn'><Image src={instagram} width={20} height={20} alt='facebook-png'></Image>Instagram</button>
                 </div>
