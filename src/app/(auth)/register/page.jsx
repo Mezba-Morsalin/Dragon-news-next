@@ -54,7 +54,7 @@ const RegisterPage = () => {
           {errors.password && <span className='text-red-500 mt-2'>{errors.password.message}</span>}
           </div>
           <div><a className="link link-hover">Forgot password?</a></div>
-          <Link href={'/login'}><button className="btn btn-neutral mt-4">Register</button></Link>
+          <button className="btn btn-neutral mt-4">Register</button>
         </fieldset>
       </form>
             </div>
